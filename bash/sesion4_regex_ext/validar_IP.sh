@@ -9,3 +9,7 @@ if [[ $1 =~ $re ]];then
 else
     echo "$1 no tiene un formato válido"
 fi
+
+# Responde que es un formato válido, porque el script solo comprueba
+# que tenga al menos 1 dígito y máximo 3, no que le número esté entre
+# el 0 y el 255
