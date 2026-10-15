@@ -3,9 +3,9 @@ if [[ $# -eq 0 ]];then
     exit
 fi
 
-re='[a-z0-9.-_]+@(alu\.edu\.gva\.es)|(edu\.gva\.es)'
+re='[a-z0-9.-_]+@(alu\.edu\.gva\.es)|(edu\.gva\.es)' #[a-z0-9.-_]+@((alu\.)?edu\.gva\.es)
 if [[ $1 =~ $re ]]; then
-    if [[ $1 =~ ·*alu.*$ ]]; then
+    if [[ $1 =~ .*alu.*$ ]]; then
         echo "El correo $1 es un correo de estudiante"
     else
         echo "El correo $1 es de profesor"
