@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dias=$1
+$1
 cifras='[0-9]{1,3}'
 
 if [ $# -eq 0 ]; then
@@ -8,8 +8,8 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [[ $dias =~ $cifras ]]; then
-    sed -i.bak "s/^PASS_MAX_DAYS.*/PASS_MAX_DAYS $dias/" login.defs
+if [[ $1 =~ $cifras ]]; then
+    sed -i.bak "s/^PASS_MAX_DAYS.*/PASS_MAX_DAYS $1/" login.defs
     antes=$(grep '^PASS_MAX_DAYS' login.defs.bak | head -n 1)
     despues=$(grep '^PASS_MAX_DAYS' login.defs | head -n 1)
     echo "Antes: $antes"
