@@ -28,7 +28,7 @@ FECHA_HORA=$(date +%Y%m%d-%H%M%S)
 NOMBRE_ARCHIVO="etc-${FECHA_HORA}.tar.gz"
 RUTA_COMPLETA="${DIR_DESTINO}/${NOMBRE_ARCHIVO}"
 
-if tar -czf "$RUTA_COMPLETA" /etc; then
+if tar -czf "$RUTA_COMPLETA" /etc 2>/dev/null; then
     registrar "Copia creada: $RUTA_COMPLETA"
 else
     registrar "Error: no se pudo crear la copia de seguridad"
